@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>안온한 글쓰기</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="theme-color" content="#FEF0F4">
+<style>
+  html, body { margin: 0; height: 100%; background: #FEF0F4; }
+  iframe { border: 0; width: 100%; height: 100%; display: block; }
+</style>
+</head>
+<body>
+<iframe id="app" allow="clipboard-read; clipboard-write"></iframe>
+<script>
+  // 주소 뒤에 ?page=admin 이 붙으면 관리자 화면으로 연결
+  document.getElementById('app').src =
+    'https://script.google.com/macros/s/AKfycbwYXsVFDFtn1Weo3yLSjlNIGb__F0MkBhhuDAnnj7I63vJWbwvjREy-7E0L2Tw_cLNs/exec' + location.search;
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
+</script>
+</body>
+</html>
